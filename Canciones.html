@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canciones</title>
+    <link rel="icon" type="image/png" href="/img/descarga.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            margin: 0 15px;
+        }
+
+        .violet-button {
+            background-color: rgba(255, 105, 135, 0.6);
+            border: none;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .violet-button:hover {
+            background-color: rgba(255, 105, 135, 0.8);
+            color: #fff;
+        }
+
+        .container {
+            padding: 60px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .song-card {
+            background: #fff;
+            color: #333;
+            border-radius: 15px;
+            width: 300px;
+            margin: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .song-frame {
+            border-radius: 15px;
+            width: 100%;
+            height: 352px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .info {
+            padding: 15px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .initial-info {
+            opacity: 1;
+        }
+
+        .song-card:hover .initial-info {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .song-card:hover .song-frame {
+            pointer-events: auto;
+        }
+        .media-card {
+            background: #fff;
+            color: #333;
+            border-radius: 15px;
+            width: 300px;
+            margin: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .media-card a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            background: rgba(255, 105, 135, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .media-card a:hover {
+            background: rgba(255, 105, 135, 0.3);
+        }
+
+        .media-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .media-frame {
+            border-radius: 15px;
+            width: 100%;
+            height: 200px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <ul class="menu">
+            <li class="menu-item"><button class="violet-button" onclick="location.href='index.html'">Inicio</button></li>
+            <li class="menu-item"><button class="violet-button" onclick="location.href='Canciones.html'">Canciones</button></li>
+            
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="song-card">
+            <div class="info initial-info">
+                <p>En tu mirada encuentro mi destino.</p>
+            </div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7D0RhFcb3CrfPuTJ0obrod?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="song-card">
+            <div class="info initial-info">
+                <p>Eres el sueño del que jamás quiero despertar.</p>
+            </div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4yEJ1SNpgfK5GPx3Y0YhIU?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="song-card">
+            <div class="info initial-info">
+                <p>Eres la melodía que danza en mi corazón.</p>
+            </div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7nAvryV9PVCt9PQGPx7I0z?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                    <p>Mas preciosa es que las piedras preciosas, y todo lo que puedes desear no se puede comparar con ella.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7gQfSsnHaLcZLvr16L1fYw?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                    <p>Eres única y especial.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6Jiom35dhAYX6ohfwJkQEr?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                    <p>Eres la razón de mis sonrisas.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1RQkKTyJZhFERJy6t5gIbv?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                    <p>Tu belleza es solo una pequeña parte de lo maravillosa que eres.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2DQWbH7mMQYRuftnYPlfqQ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                    <p>Eres la razón de mis sonrisas.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1ZIYItqFcgBFE7dMw8VjG8?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                    <p>Eres única y especial.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4n8zQAFzSi3jH3JQGsbI86?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                    <p>Aunque estemos lejos, mi corazón siempre está contigo.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/10wJLBBI4Y6VvoCYKoMvzZ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                    <p>La distancia no puede borrar lo que siento por ti.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1uQhUupvikvunqykML6NPd?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song-card">
+                <div class="info initial-info">
+                <p>Cada kilómetro que nos separa solo hace que te quiera más.</p>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4AGPU9325LRTIBsBSJ5v75?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="media-card">
+                    <p><a href="https://photos.app.goo.gl/BVw4XikYxREn6qvb7" target="_blank">Ver videos en Google Photos <span>🤍</span></a></p>
+                </div>
+
+    </div>
+</body>
+
+</html>

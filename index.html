@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <link rel="icon" type="image/png" href="/img/descarga.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 10px 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            margin: 0 15px;
+        }
+
+        .violet-button {
+            background-color: rgba(255, 105, 135, 0.4);
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .violet-button:hover {
+            background-color: rgba(255, 105, 135, 0.6);
+            color: #fff;
+        }
+
+        .container {
+            padding: 60px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            text-align: center;
+        }
+
+        .card-button {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 20px 40px;
+            cursor: pointer;
+            font-size: 20px;
+            color: rgba(255, 105, 135, 0.9);
+            font-weight: bold;
+            border-radius: 30px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .card-button:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 105, 135, 0.8);
+            color: #fff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 20;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 80%;
+            max-width: 960px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ff6f61;
+        }
+
+        .modal-content p {
+            margin: 20px 0;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .cloudPane {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/k2K1jha.png') repeat-x;
+            animation: floatClouds 60s linear infinite;
+        }
+
+        @keyframes floatClouds {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 100% 0;
+            }
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            width: 3px;
+            height: 3px;
+            background: #fff;
+            position: absolute;
+            box-shadow: 0 0 15px 5px #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.5;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Random star placement */
+        #star1 {
+            left: 20%;
+            top: 30%;
+        }
+
+        #star2 {
+            left: 50%;
+            top: 60%;
+        }
+
+        #star3 {
+            left: 70%;
+            top: 20%;
+        }
+
+        #star4 {
+            left: 10%;
+            top: 80%;
+        }
+
+        #star5 {
+            left: 80%;
+            top: 50%;
+        }
+
+        #star6 {
+            left: 30%;
+            top: 10%;
+        }
+
+        #star7 {
+            left: 60%;
+            top: 40%;
+        }
+
+        #star8 {
+            left: 90%;
+            top: 70%;
+        }
+
+        #star9 {
+            left: 40%;
+            top: 90%;
+        }
+
+        #star10 {
+            left: 25%;
+            top: 45%;
+        }
+
+        #star11 {
+            left: 75%;
+            top: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <ul class="menu">
+            <li class="menu-item"><button class="violet-button" onclick="location.href='index.html'">Inicio</button></li>
+            <li class="menu-item"><button class="violet-button" onclick="location.href='Canciones.html'">Canciones</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="cloudPane"></div>
+        <div class="stars">
+            <div class="star" id="star1"></div>
+            <div class="star" id="star2"></div>
+            <div class="star" id="star3"></div>
+            <div class="star" id="star4"></div>
+            <div class="star" id="star5"></div>
+            <div class="star" id="star6"></div>
+            <div class="star" id="star7"></div>
+            <div class="star" id="star8"></div>
+            <div class="star" id="star9"></div>
+            <div class="star" id="star10"></div>
+            <div class="star" id="star11"></div>
+            <div class="star" id="star12"></div>
+            <div class="star" id="star13"></div>
+            <div class="star" id="star14"></div>
+            <div class="star" id="star15"></div>
+            <div class="star" id="star16"></div>
+            <div class="star" id="star17"></div>
+            <div class="star" id="star18"></div>
+            <div class="star" id="star19"></div>
+            <div class="star" id="star20"></div>
+        </div>
+        <button class="card-button" onclick="openModal()">Haz clic para abrir</button>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>¡Feliz cumpleaños! 🎊🥳</p>
+            <p>Espero que tengas un cumpleaños maravilloso y lleno de alegría.
+                Felices 19 añitos guapaaa sabes perfectamente que cada año nunca me olvido de ti, sabes lo muchooo que te quiero y lo especial que eres para mi 
+                en verdad no hay una palabra que defina todo lo que siento por ti, que siempre has sido y vas a ser mi motivacion sabes que siempre voy a querer lo mejor para ti. <br>
+                Sabes, que jamás paso por mi el dejar de pensar en ti; como te digo eres una parte de mi vida y jamás dejaría de pensar en ti.🥺
+                Eres tú la razón,el porque y el motivo de mi vida. Sabiendo que aun nuestro momento no ha llegado pero que siempre esparare por el y intentarlo de nuevo.🥺
+                Eres tú el pretexto y la excusa que tengo, para luchar y hacer planes, pensando solo en tenerte, eres tú mi inspiración eso por lo que rompería esquemas, recorrería kilómetros, sin cansarme, solo para tener una mirada tuya o un beso, si no fuera mucho pedir.
+                No sales nunca de mis pensamientos, de mi mente y te mudaste permanente a mis sueños.
+                No sé de qué manera te abriste paso y te metiste dentro de mi corazón y ahora espero pacientemente a que entres en mi vida.
+                Eres tú para mí, lo único, lo primero y lo último, eso que necesito en mis mañanas, en mis días y en mis noches.
+                Eres tú lo que quiero tener aquí a mi lado, por siempre en mi existir, hasta el infinito y más allá…
+                Eres tú la razón y el motivo de mi vida.
+                Eres tú TODO para mí. <br>
+                Cumple con todas tus metas y logros eres una mujer llena de grandes cualidades que nadie te haga dudar eso jamas de ti. Tqm yo y mi corazoncito de pollo. 🤍</p>
+            <p>Con cariño,</p>
+            <p>J.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+            document.getElementById("nav").classList.add("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+            document.getElementById("nav").classList.remove("hidden");
+        }
+
+        window.onclick = function (event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

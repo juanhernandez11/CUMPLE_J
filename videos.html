@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+    <link rel="icon" type="image/png" href="/img/descarga.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            margin: 0 15px;
+        }
+
+        .violet-button {
+            background-color: rgba(255, 105, 135, 0.6);
+            border: none;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .violet-button:hover {
+            background-color: rgba(255, 105, 135, 0.8);
+            color: #fff;
+        }
+
+        .container {
+            padding: 60px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-card {
+            background: #fff;
+            color: #333;
+            border-radius: 10px;
+            width: 200px;
+            margin: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card .info {
+            padding: 15px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: #fff;
+        }
+
+        .video-card:hover .info {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <ul class="menu">
+            <li class="menu-item"><button class="violet-button" onclick="location.href='index.html'">Inicio</button></li>
+            <li class="menu-item"><button class="violet-button" onclick="location.href='Canciones.html'">Canciones</button></li>
+            <li class="menu-item"><button class="violet-button" onclick="location.href='Videos.html'">Videos</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="video-card">
+            <img src="img/video1.jpg" alt="Video 1">
+            <div class="info">Título del video 1</div>
+        </div>
+        <div class="video-card">
+            <img src="img/video2.jpg" alt="Video 2">
+            <div class="info">Título del video 2</div>
+        </div>
+        <div class="video-card">
+            <img src="img/video3.jpg" alt="Video 3">
+            <div class="info">Título del video 3</div>
+        </div>
+    </div>
+</body>
+
+</html>
